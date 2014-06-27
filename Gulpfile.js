@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 function startExpress() {
   var express = require('express');
   var app = express();
-  app.use(require('connect-livereload')());
+  app.use(require('connect-livereload')({port: 4002}));
   app.use(express.static(__dirname));
   app.listen(4000);
 }
@@ -15,7 +15,7 @@ function startExpress() {
 var tinylr;
 function startLiveReload() {
   tinylr = require('tiny-lr')();
-  tinylr.listen(35729);
+  tinylr.listen(4002);
 }
 
 function notifyLiveReload(event) {
