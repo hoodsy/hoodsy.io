@@ -1,6 +1,5 @@
-$color: red;
+$color: blue;
 
-    #container {
-      color : $color;
-      box-sizing: border-box;
-    }
+body {
+  background-color : $color;
+}
