@@ -30,7 +30,6 @@
 		background-color: white;
 	}
 
-	@include tablet { margin: 0; }
 	@include mobile { margin: 0; padding: 15px 0 0 15px; }
 }
 
@@ -53,11 +52,6 @@
 		}
 	}
 
-	@include tablet {
-		margin: 0;
-		float: right;
-		& li { padding: 0 0 10px 0; }
-	}
 	@include mobile {
 		margin: 0;
 		float: right;
@@ -66,18 +60,12 @@
 }
 
 .navbar-toggle {
-	@include tablet {
-		margin-top: 0;
-	}
 	@include mobile {
 		margin-top: 0;
 	}
 }
 
 .navbar-collapse {
-	@include tablet {
-		box-shadow: none;
-	}
 	@include mobile {
 		box-shadow: none;
 	}
