@@ -1,16 +1,13 @@
 /*
 ** Remove .hidden after a delay
 */
-var hideDelay = function(classname, time) {
+var hideDelay = function(classname, time, hide) {
 	setTimeout(function() {
-		$(classname).removeClass('hidden');
+		$(classname).removeClass(hide);
 	}, time);
 };
 
-hideDelay('.headline', 500);
-hideDelay('.quote', 2000);
-hideDelay('nav', 2000);
-
-
-// $(document).ready(function(){
-// });
+hideDelay('.headline', 500, 'hidden');
+hideDelay('.home-image', 2500, 'transparent');
+hideDelay('.quote', 2500, 'hidden');
+hideDelay('nav', 2500, 'hidden');
