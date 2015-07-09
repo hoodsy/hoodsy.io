@@ -39,7 +39,7 @@
 
 	& li {
 		padding: 15px;
-		& :hover, :active, :focus, .nav-active {
+		& :hover, .nav-active {
 			border-bottom: 2px $green solid;
 			
 			color: $green;
