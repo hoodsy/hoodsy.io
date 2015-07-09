@@ -1,0 +1,79 @@
+#contact {
+  background: url("../app/assets/images/contact.png") no-repeat center fixed;
+  background-size: cover;
+  height: $one-viewport;
+
+	.contact-content {
+		@extend .content;
+
+		.contact-header { @extend .header; }
+		.contact-divider { @extend .divider; }
+
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+
+			input, textarea {
+				width: 25vw;
+				padding-bottom: 10px;
+
+				background: none;
+				border: none;
+				border-bottom: 2px solid white;
+				border-radius: 0px;
+
+				font-size: 2rem;
+				font-weight: 300;
+
+				transition: all 0.25s linear;
+
+				@include mobile { width: 90vw; }
+
+				&:focus {
+					outline: 0;
+					border-bottom: 2px solid $green;
+				}
+			}
+			input { margin-bottom: 2.5vh; }
+			textarea {
+				margin-bottom: 0;
+				resize: none;
+			}
+
+			.contact-submit {
+				height: 4rem;
+				margin-top: 2.5vh;
+
+				border: none;
+				border-radius: 2px;
+				background-color: $green;
+
+				font-size: $font-md;
+				font-weight: $light;
+
+				transition: all .25s cubic-bezier(.7, 0, 1, 1);
+
+				&:focus { outline: 0; }
+				&:hover {
+					background-color: white;
+					color: $green;
+				}
+			}
+
+			.sent {
+				background-color: white;
+				color: $green;
+			}
+		}
+		.contact-social {
+			margin-top: 10vh;
+
+			& img {
+				height: 9vh;
+				padding: 2.5vh;
+
+				&:hover, :active { cursor: pointer; }
+			}
+		}
+	}
+}

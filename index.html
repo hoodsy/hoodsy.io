@@ -1,11 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-  <link href="/css/styles.min.css" media="screen" rel="stylesheet" type="text/css">
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hoodsy Labs</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Bootstrap Styles -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- App Styles -->
+  <link href="/css/main.min.css" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-64914553-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </head>
+
 <body>
-  Hello World!
+	<!-- Home  -->
+	<section id="home">
+
+		<!-- Navbar -->
+	  <nav class="navbar navbar-fixed-top hidden">
+	    <div class="navbar-header">
+		    <button type="button"
+		    	class="navbar-toggle"
+		    	data-toggle="collapse"
+		    	data-target="#nav">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span> 
+	      </button>
+	      <a class="logo" href="#home">
+	        HOODSY LABS
+	      </a>
+	    </div>
+	    	<!-- Navigation -->
+	    	<div id="nav" class="collapse navbar-collapse">
+		      <ul class="navbar-nav navbar-right">
+		        <li><a href="#about">ABOUT</a></li>
+		        <li><a href="#portfolio">PORTFOLIO</a></li>
+		        <li><a href="#contact">CONTACT</a></li>
+		      </ul>
+	    	</div>
+		</nav>
+
+	  <div class="home-content">
+	  	<div class="headline hidden">
+	  		Let's <span class="green pop-text">design</span>, <span class="green pop-text">develop</span>, and <span class="green pop-text">cultivate </span><br>
+	  		intuitive solutions together.
+		  </div>
+
+		  <div class="quote hidden">
+		  	To improve is to change; to be perfect is to change often.
+		  	<br><br>
+		  	<span class="quote-author">
+		  		- Winston Churchill
+		  	</span>
+			  <!-- <div class="scroll-arrow">
+			  	<a href="#about" du-smooth-scroll
+			  		class="glyphicon glyphicon-chevron-down">
+			  	</a>
+			  </div> -->
+		  </div>
+		</div>
+	</section>
+
+	<!-- About -->
+	<section id="about">
+		<div class="about-content">
+			<div class="about-header wow fadeInDown"
+				data-wow-delay=".5s"
+				data-wow-duration="3s">
+				Hey there, I'm <span class="pop-text">Logan</span>.<br>
+			</div>
+
+			<div class="about-divider wow fadeIn"
+				data-wow-delay=".5s"
+				data-wow-duration="2s"></div>
+
+			<div class="about-body wow fadeInUp"
+				data-wow-delay=".5s"
+				data-wow-duration="2s">
+				I design and develop user-centric products for mobile and web with a healthy dose of simplicity.
+				<br><br>
+				The usability of your product is of utmost importance to its success. Let's create a product that caters to your customer's needs and achieves your goals.
+			</div>
+		</div>
+	</section>
+
+	<!-- Portfolio -->
+	<section id="portfolio">
+	  <div class="portfolio-header">
+	  	<span class="wow fadeInDown"
+		  	data-wow-delay=".5s"
+				data-wow-duration="3s">
+	  		Here's some of my work.
+	  	</span>
+	  	<div class="portfolio-divider wow fadeIn"
+	  		data-wow-delay=".5s"
+				data-wow-duration="2s">
+	  </div>
+
+	  </div>
+	  <div class="portfolio-content wow fadeInUp"
+	  	data-wow-delay=".5s"
+			data-wow-duration="3s">
+	  	<div class="portfolio-item-one">
+	  		<p class="portfolio-desc">lrn<br>
+	  			<span>Learn to code at your convenience</span>
+	  		</p>
+	  		<img src="../app/assets/images/lrn.png"/>
+	  	</div>
+	  	<div class="portfolio-item-two">
+	  		<p class="portfolio-desc">Coffee Sourcing<br>
+	  			<span>Candidate sourcing made easy</span>
+	  		</p>
+	  		<img src="../app/assets/images/coffee-sourcing.png"/>
+	  	</div>
+	  	<div class="portfolio-item-three">
+	  		<p class="portfolio-desc">ATS<br>
+	  			<span>Connecting the next generation of professionals</span>
+	  		</p>
+	  		<img src="../app/assets/images/coffee-ats.png"/>
+	  	</div>
+	  </div>
+
+	</section>
+
+	<!-- Contact -->
+	<section id="contact">
+		<div class="contact-content">
+			<div class="contact-header wow fadeInDown"
+				data-wow-delay=".5s"
+				data-wow-duration="3s">
+				What's on your mind?
+			</div>
+			<div class="contact-divider wow fadeIn"
+				data-wow-delay=".5s"
+				data-wow-duration="2s"></div>
+
+			<form class="contact-form wow fadeIn"
+				data-wow-delay=".5s"
+				data-wow-duration="3s">
+				<input 
+					type="text"
+					name="name"
+					required
+					placeholder="Name">
+				<input 
+					type="email"
+					name="email"
+					required
+					placeholder="Email">
+				<textarea
+					type="text"
+					name="message"
+					required
+					rows="4"
+					placeholder="Message"></textarea>
+				<button type="submit" class="contact-submit">Send</button>
+			</form>
+
+			<div class="contact-social">
+				<a class="pop-text"
+					href="https://github.com/hoodsy"
+					target="_blank">
+					<img src="/app/assets/images/github.svg" alt="">
+				</a>
+				<a class="pop-text"
+					href="https://twitter.com/_hoodsy"
+					target="_blank">
+					<img src="/app/assets/images/twitter.svg" alt="">
+				</a>
+				<a class="pop-text"
+					href="https://dribbble.com/hoodsy"
+					target="_blank">
+					<img src="/app/assets/images/dribbble.svg" alt="">
+				</a>
+			</div>
+		</div>
+
+	</section>
+
 </body>
+
+<!-- jQuery -->
+<script src="/bower_components/jquery/dist/jquery.min.js" ></script>
+<!-- Bootstrap -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+<!-- Smooth Scroll -->
+<script src="/app/assets/requires/jquery.scrollTo.min.js"></script>
+<!-- WOWjs -->
+<script src="/app/assets/requires/wow.min.js"></script>
+<script>new WOW().init();</script>
+<!-- App Scripts -->
+<script src="/app/js/animations.js" async defer></script>
+<script src="/app/js/contact-form.js" async defer></script>
+<script src="/app/js/scroll-highlight.js" async defer></script>
+
 </html>

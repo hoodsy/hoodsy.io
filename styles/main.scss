@@ -1,0 +1,149 @@
+/*
+** Library Style Imports
+*/
+
+@import 'animate';
+@import 'config';
+
+
+/*
+** Base Document Styles
+*/
+html {
+  overflow-x: hidden; 
+}
+
+body {
+  font-family: $font-Lato;
+  color: white;
+  background-color: $grey-blue;
+}
+
+ul {
+	list-style: none;
+}
+
+a, a:hover, a:active, a:focus {
+  color: white;
+	text-decoration: none;
+}
+
+
+/*
+** Variables
+*/
+
+// Spacing
+$one-viewport: 100vh;
+$header-spacing: 20vh;
+
+// Animations
+$bounce: cubic-bezier(.75, 0, .1, 1.2);
+$float-smooth: cubic-bezier(.2, 1, .8, 0);
+
+
+/*
+** Mixins
+*/
+
+// Media Query
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024px) { @content; }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) { @content; }
+}
+
+
+/*
+** Parent Classes
+*/
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include mobile {
+    transform: traslateZ(0);
+  }
+
+  div {
+    align-self: center;
+  }
+}
+
+.header {
+  padding-top: $header-spacing;
+  font-size: $font-lg;
+  font-weight: $medium;
+  @include mobile {
+    font-size: $font-lg-md;
+    transform: traslateZ(0);
+  }
+}
+
+.divider {
+  width: 5%;
+  padding-top: 3.5vh;
+  margin-bottom: 5vh;
+  border-bottom: 2px solid white;
+  transition: all 0.25s linear 0s;
+
+  &:hover, :active {
+    width: 15%;
+
+    border-bottom: 2px solid $green;
+    transition: all 0.25s linear;
+  }
+
+  @include mobile {
+    width: 20%;
+    transform: traslateZ(0);
+  }
+}
+
+.portfolio-item {
+  width: 30vw;
+  height: 40vh;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  transition: all .5s $bounce;
+
+  @include mobile {
+    width: 100vw;
+    height: 50vh;
+    transform: traslateZ(0);
+  }
+
+  & img {
+    max-width: 100%;
+    max-height: 100%;
+    
+    opacity: 0.2;
+
+    transition: all .5s $bounce;
+  }
+
+  &:hover, :active {
+    z-index: 5;
+    & img { opacity: 1; }
+    & .portfolio-desc { opacity: 0; }
+  }
+}
+
+
+/*
+** View Style Imports
+*/
+
+@import 'home';
+@import 'nav';
+@import 'about';
+@import 'contact';
+@import 'portfolio';

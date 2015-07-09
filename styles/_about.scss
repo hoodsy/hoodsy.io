@@ -1,0 +1,23 @@
+#about {
+  height: $one-viewport;
+  background: url("../app/assets/images/about.png") no-repeat top fixed;
+  background-size: cover;
+
+  .about-content {
+    @extend .content;
+
+    .about-header { @extend .header; }
+    .about-divider { @extend .divider; }
+
+    .about-body {
+      width: 35%;
+      
+      font-size: $font-md - .25rem;
+      font-weight: $light;
+
+      @include mobile {
+        width: 90%;
+      }
+    }
+  }
+}

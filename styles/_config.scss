@@ -1,0 +1,70 @@
+/*
+** Colors
+*/
+
+$red: #C86548;
+
+$blue: #7191A9;
+// $blue-light: #cfe6fc;
+$green: #b2d1c0;
+
+$pink: #c7a2b6;
+
+$grey-dark: #697279;
+$grey-light: #C7D7DE;
+$grey-blue: #5B6E7E;
+
+$white: #F5F5F5;
+
+.green {
+	color: $green;
+}
+
+.green-hover:hover {
+	border-bottom: 4px solid $green;
+	cursor: default
+}
+
+.pop-text {
+	cursor: default;
+	transition: all 1s cubic-bezier(.1, 0, .75, 1);
+	&:hover {
+		transform: translateY(-.5em);
+		transition: all 3s cubic-bezier(.2, 1, .8, 0);
+	}
+}
+
+.white-bg-hover:hover {
+	background-color: white;
+	color: $green;
+
+	cursor: default;
+	transition: all 0.25s linear 0s;
+}
+
+
+/*
+** Fonts
+*/
+
+// Font Faces
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic);
+$font-Lato: 'Lato', sans-serif;
+
+@font-face {
+	font-family: 'Jaapokkienhance-Regular';
+	src: url("../app/assets/fonts/Jaapokki/Jaapokkienhance-Regular.otf") format('opentype');
+}
+$font-Jaapokki: 'Jaapokkienhance-Regular';
+
+// Sizes
+$font-lg: 3rem;
+$font-lg-md: 2.5rem;
+$font-md: 2rem;
+$font-sm-md: 1.5rem;
+$font-sm: 1rem;
+
+// Weights
+$medium: 400;
+$light: 300;
+

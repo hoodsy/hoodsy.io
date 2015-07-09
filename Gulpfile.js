@@ -1,14 +1,55 @@
 var gulp = require('gulp'),
-        sass = require('gulp-ruby-sass'),
-        autoprefixer = require('gulp-autoprefixer'),
-        minifycss = require('gulp-minify-css'),
-        rename = require('gulp-rename');
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
+    nodemailer = require('nodemailer'),
+    bodyParser = require('body-parser');
+    config = require('config');
 
 gulp.task('express', function() {
   var express = require('express');
   var app = express();
   app.use(require('connect-livereload')({port: 4002}));
   app.use(express.static(__dirname));
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+
+  app.post('/send', function(req, res) {
+
+    // Authenticate with Gmail
+    var transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: config.email,
+        pass: config.password
+      }
+    });
+
+    // Create email text from contact form
+    var emailBody = req.body.name 
+            + '\n'+ req.body.email 
+         + '\n\n' + req.body.message;
+
+    // Create email
+    var mailOptions = {
+      from: 'Hoodsy Labs <bernard.logan4@gmail.com>',
+      to: 'bernard.logan4@gmail.com',
+      subject: 'Contact Message From: ' + req.body.name,
+      text: emailBody
+    };
+
+    // send email
+    transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+        console.log(error);
+      }else{
+        console.log('Message sent: ' + info.response);
+      }
+    });
+  res.send();
+  });
+
   app.listen(4000);
 });
 
@@ -29,7 +70,7 @@ function notifyLiveReload(event) {
 }
 
 gulp.task('styles', function() {
-      return gulp.src('sass/*.scss')
+      return gulp.src('styles/*.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('css'))
@@ -39,7 +80,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('sass/*.scss', ['styles']);
+  gulp.watch('styles/*.scss', ['styles']);
   gulp.watch('*.html', notifyLiveReload);
   gulp.watch('css/*.css', notifyLiveReload);
 });
