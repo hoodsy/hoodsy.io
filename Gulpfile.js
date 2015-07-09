@@ -1,10 +1,11 @@
 var gulp         = require('gulp'),
     config       = require('config'),
-    rename       = require('gulp-rename'),
-    sass         = require('gulp-ruby-sass'),
+    size         = require('gulp-size'),
     nodemailer   = require('nodemailer'),
-    imagemin     = require('gulp-imagemin'),
+    rename       = require('gulp-rename'),
     bodyParser   = require('body-parser'),
+    imagemin     = require('gulp-imagemin'),
+    sass         = require('gulp-ruby-sass'),
     minifycss    = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer');
 
@@ -82,8 +83,9 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
     return gulp.src('app/assets/images/*.png')
-    .pipe(imagemin({ progressive: true }))
-    .pipe(gulp.dest('images'));
+    .pipe(imagemin({  optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('images'))
+    .pipe(size());
 });
 
 gulp.task('watch', function() {
