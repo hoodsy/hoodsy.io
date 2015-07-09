@@ -3,6 +3,7 @@
   background: url("/images/home.png") no-repeat center bottom fixed;
   background-size: cover;
   box-shadow: inset 0 0 0 100vh rgba(91, 110, 126,.7);
+  animation: fadeIn 10s;
 
 	.home-content {
 		@extend .content;
