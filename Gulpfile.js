@@ -1,11 +1,12 @@
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    nodemailer = require('nodemailer'),
-    bodyParser = require('body-parser');
-    config = require('config');
+var gulp         = require('gulp'),
+    config       = require('config'),
+    rename       = require('gulp-rename'),
+    sass         = require('gulp-ruby-sass'),
+    nodemailer   = require('nodemailer'),
+    imagemin     = require('gulp-imagemin'),
+    bodyParser   = require('body-parser'),
+    minifycss    = require('gulp-minify-css'),
+    autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('express', function() {
   var express = require('express');
@@ -79,12 +80,18 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('css'));
 });
 
+gulp.task('images', function() {
+    return gulp.src('app/assets/images/*.png')
+    .pipe(imagemin({ progressive: true }))
+    .pipe(gulp.dest('images'));
+});
+
 gulp.task('watch', function() {
   gulp.watch('styles/*.scss', ['styles']);
   gulp.watch('*.html', notifyLiveReload);
   gulp.watch('css/*.css', notifyLiveReload);
 });
 
-gulp.task('default', ['styles', 'express', 'livereload', 'watch'], function() {
+gulp.task('default', ['styles', 'images', 'express', 'livereload', 'watch'], function() {
 
 });
