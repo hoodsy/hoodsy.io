@@ -7,7 +7,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
 */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic);
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -3050,15 +3050,31 @@ a, a:hover, a:active, a:focus {
 */
 #home {
   height: 100vh;
-  background: url("../app/assets/images/home.png") no-repeat center bottom fixed;
+  width: 100%;
+}
+#home .home-image {
+  height: 100vh;
+  width: 100%;
+  background: url("/images/home.png") no-repeat center bottom fixed;
   background-size: cover;
-  -webkit-box-shadow: inset 0 0 0 100vh rgba(91, 110, 126, 0.7);
-  box-shadow: inset 0 0 0 100vh rgba(91, 110, 126, 0.7);
+  -webkit-box-shadow: inset 0 0 0 100vh rgba(91, 110, 126, 0.5);
+  box-shadow: inset 0 0 0 100vh rgba(91, 110, 126, 0.5);
+  position: absolute;
+  z-index: -1;
+  opacity: 1;
+  -webkit-transition: all 2.5s ease-in;
+  transition: all 2.5s ease-in;
+}
+#home .transparent {
+  opacity: 0;
+}
+#home .home-content {
+  z-index: 5;
 }
 #home .home-content .headline {
   text-align: center;
-  -webkit-animation: fadeInUp 2.5s;
-  animation: fadeInUp 2.5s;
+  -webkit-animation: fadeInUp 3s;
+  animation: fadeInUp 3s;
 }
 @media (max-width: 768px) {
   #home .home-content .headline {
@@ -3110,11 +3126,6 @@ a, a:hover, a:active, a:focus {
 .navbar-header .icon-bar {
   background-color: white;
 }
-@media (min-width: 768px) and (max-width: 1024px) {
-  .navbar-header {
-    margin: 0;
-  }
-}
 @media (max-width: 768px) {
   .navbar-header {
     margin: 0;
@@ -3128,7 +3139,7 @@ a, a:hover, a:active, a:focus {
 .navbar-nav li {
   padding: 15px;
 }
-.navbar-nav li :hover, .navbar-nav li :active, .navbar-nav li :focus, .navbar-nav li .nav-active {
+.navbar-nav li :hover, .navbar-nav li .nav-active {
   border-bottom: 2px #b2d1c0 solid;
   color: #b2d1c0;
   -webkit-transition: all 0.25s cubic-bezier(0, 0, 0.75, 1);
@@ -3138,15 +3149,6 @@ a, a:hover, a:active, a:focus {
   padding-bottom: 2px;
   -webkit-transition: all 0.5s cubic-bezier(0.5, 0, 1, 1);
   transition: all 0.5s cubic-bezier(0.5, 0, 1, 1);
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .navbar-nav {
-    margin: 0;
-    float: right;
-  }
-  .navbar-nav li {
-    padding: 0 0 10px 0;
-  }
 }
 @media (max-width: 768px) {
   .navbar-nav {
@@ -3158,23 +3160,12 @@ a, a:hover, a:active, a:focus {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .navbar-toggle {
-    margin-top: 0;
-  }
-}
 @media (max-width: 768px) {
   .navbar-toggle {
     margin-top: 0;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .navbar-collapse {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-}
 @media (max-width: 768px) {
   .navbar-collapse {
     -webkit-box-shadow: none;
@@ -3184,7 +3175,7 @@ a, a:hover, a:active, a:focus {
 
 #about {
   height: 100vh;
-  background: url("../app/assets/images/about.png") no-repeat top fixed;
+  background: url("/images/about.png") no-repeat top fixed;
   background-size: cover;
 }
 #about .about-content .about-body {
@@ -3199,7 +3190,7 @@ a, a:hover, a:active, a:focus {
 }
 
 #contact {
-  background: url("../app/assets/images/contact.png") no-repeat center fixed;
+  background: url("/images/contact.png") no-repeat center fixed;
   background-size: cover;
   height: 100vh;
 }
