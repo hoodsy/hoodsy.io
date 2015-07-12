@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
 
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/requires/jquery.js', 'app/requires/*.js', 'app/js/*.js'], {base: 'app'})
+  return gulp.src(['app/requires/jquery.min.js', 'app/requires/*.js', 'app/js/*.js'], {base: 'app'})
   	.pipe(concat('main.js'))
   	.pipe(gulp.dest('build/js'))
 });
