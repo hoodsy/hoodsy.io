@@ -18,10 +18,6 @@ gulp.task('express', function() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
 
-  // app.get('/', function(req, res) {
-  //     res.sendFile('index.html', { root: 'build' });
-  // });
-
   app.post('/send', function(req, res) {
 
     // Authenticate with Gmail
@@ -58,5 +54,3 @@ gulp.task('express', function() {
   // app.listen( config.express.port );
   app.listen( config.express.port );
 });
-
-
