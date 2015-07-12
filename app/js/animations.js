@@ -1,3 +1,4 @@
+//=require app/requires/jquery.js
 /*
 ** Remove .hidden after a delay
 */
