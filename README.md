@@ -1,7 +1,7 @@
 ## Build
 
 #### Development
-gulp assets
+gulp assets <br/>
 gulp
 
 #### Production
