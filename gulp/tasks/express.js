@@ -1,12 +1,12 @@
 'use strict';
 
-var gulp         = require('gulp');
-var morgan       = require('morgan');
-var express      = require('express');
-var config       = require('../config');
-var nodemailer   = require('nodemailer');
-var bodyParser   = require('body-parser');
-var livereload   = require('connect-livereload');
+var gulp       = require('gulp');
+var morgan     = require('morgan');
+var express    = require('express');
+var config     = require('../config');
+var nodemailer = require('nodemailer');
+var bodyParser = require('body-parser');
+var livereload = require('connect-livereload');
 
 
 gulp.task('express', function() {

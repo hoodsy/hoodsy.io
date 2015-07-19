@@ -51,7 +51,8 @@
 				font-size: $font-md;
 				font-weight: $light;
 
-				transition: all .25s cubic-bezier(.7, 0, 1, 1);
+				// transition: all .25s cubic-bezier(.7, 0, 1, 1);
+				transition: all .15s cubic-bezier(0, 0, 1, 1);
 
 				&:focus { outline: 0; }
 				&:hover {
@@ -66,10 +67,10 @@
 			}
 		}
 		.contact-social {
-			margin-top: 10vh;
+			margin-top: 30vh;
 
 			& img {
-				height: 9vh;
+				height: 7.5vh;
 				padding: 2.5vh;
 
 				&:hover, :active { cursor: pointer; }
